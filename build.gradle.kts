@@ -9,6 +9,11 @@ repositories {
 
 application {
     mainClassName = "CompactStringBug"
+
+// Enabling any of the below JVM args works around the bug
+
+//    applicationDefaultJvmArgs = listOf("-Xint")
+//    applicationDefaultJvmArgs = listOf("-XX:TieredStopAtLevel=1")
 //    applicationDefaultJvmArgs = listOf("-Djava.compiler=NONE")
 //    applicationDefaultJvmArgs = listOf("-XX:-CompactStrings")
 }
