@@ -12,10 +12,13 @@ application {
 
 // Enabling any of the below JVM args works around the bug
 
-//    applicationDefaultJvmArgs = listOf("-Xint")
+//    applicationDefaultJvmArgs = listOf(
+//        "-XX:+UnlockDiagnosticVMOptions",
+//        "-XX:DisableIntrinsic=_inflateStringC")
+//    applicationDefaultJvmArgs = listOf("-XX:-CompactStrings")
 //    applicationDefaultJvmArgs = listOf("-XX:TieredStopAtLevel=1")
 //    applicationDefaultJvmArgs = listOf("-Djava.compiler=NONE")
-//    applicationDefaultJvmArgs = listOf("-XX:-CompactStrings")
+//    applicationDefaultJvmArgs = listOf("-Xint")
 }
 
 dependencies {
