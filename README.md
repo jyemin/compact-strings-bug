@@ -1,6 +1,6 @@
 # compact-strings-bug
 
-A reproduction of a possible bug in the JDK related to compact strings
+A reproduction of a bug in the JDK related to compact strings. It's been verified and is available [here](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8262739).
                                                    
 Scenario:
 
@@ -49,6 +49,8 @@ The incorrect behavior does not reproduce in the following scenarios
 2. The optimizer is disabled via `"-Djava.compiler=NONE"` 
    (There is a commented-out line in build.gradle.kts which will set this option).
 3. Compact strings are disabled via `"-XX:-CompactStrings"`
+   (There is a commented-out line in build.gradle.kts which will set this option).
+4. The `_inflateStringC` intrinsic is disabled via `"-XX:DisableIntrinsic=_inflateStringC"` 
    (There is a commented-out line in build.gradle.kts which will set this option).
                                                                                    
 This has been reproduced on OS X with both Java 11 and Java 15.  For example:
